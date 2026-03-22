@@ -75,7 +75,7 @@ def afficheur(grille):
         y0 = (hauteur_ecran - hauteur_aff) // 2
         afficheur.img_id = canvas.create_image(x0, y0, anchor="nw")
 
-    couleurs = {0: "#fff", 1: "#000"}
+    couleurs = {0: "#000", 1: "#fff"}
     lignes = ["{" + " ".join(couleurs[v] for v in row) + "}" for row in grille]
     afficheur.img.put(" ".join(lignes))
 
@@ -171,11 +171,11 @@ fenetre = tk.Tk()
 fenetre.update()
 fenetre.title("The Game of Life")
 fenetre.attributes("-fullscreen", True)
-canvas = tk.Canvas(fenetre, bg="white")
+canvas = tk.Canvas(fenetre, bg="black")
 canvas.pack(fill="both", expand=True)
 fenetre.bind("<Escape>", lambda e: fenetre.attributes("-fullscreen", False))
 
-grille = grille_initiale(500, 500)
+grille = grille_initiale(244, 192)
 lancer_jeu_de_la_vie(grille, None, delay = 10)
 fenetre.mainloop()
 
